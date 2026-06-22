@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-yellow: #fdb92e;
+  --brand-red: #c52f33;
+  --brand-black: #201e1e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-black text-zinc-100 antialiased;
+    font-feature-settings: "ss01";
+  }
+  ::selection {
+    @apply bg-brand-yellow text-brand-black;
+  }
+  /* Scrollbar de marca */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #171515;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #3a3737;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-yellow);
+  }
+}
+
+@layer components {
+  /* Titular agresivo de marca */
+  .heading-display {
+    @apply font-display uppercase tracking-tight leading-[0.9];
+  }
+  /* Borde-acento diagonal */
+  .clip-slant {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+  /* Tarjeta base oscura */
+  .card-dark {
+    @apply bg-ink-700/60 border border-white/5 rounded-xl backdrop-blur-sm;
+  }
+}
+
+/* Respeto a usuarios con movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

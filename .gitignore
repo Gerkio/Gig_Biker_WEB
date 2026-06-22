@@ -1,0 +1,23 @@
+# Dependencias y build
+/node_modules
+/.next
+/out
+/build
+/dist
+*.tsbuildinfo
+next-env.d.ts
+
+# Entorno y secretos (NUNCA versionar)
+.env
+.env*.local
+.vercel
+
+# Herramientas locales
+/.claude
+/.sanity
+*.log
+.DS_Store
+
+# Artefactos regenerables de los scripts de datos
+/scripts/catalog.json
+/scripts/import.ndjson

@@ -1,0 +1,173 @@
+import type { Category, Coupon, Product, Promo } from "./types";
+
+// ─────────────────────────────────────────────────────────────
+// Catalogo real de Big Biker (bigbiker.com.co), usado con
+// autorizacion del cliente. Big Biker NO vende motocicletas:
+// se especializa en INDUMENTARIA y ACCESORIOS para motociclismo.
+//
+// GENERADO automaticamente desde el catalogo real (ver .scrape/).
+// 85 productos. Imagenes en /public/productos (servidas localmente).
+// Las tallas son referenciales para la demo; los precios son reales.
+// ─────────────────────────────────────────────────────────────
+
+export const seedCategories: Category[] = [
+  { _id: "cat-jerseys", title: "Jerseys", slug: "jerseys", description: "Jerseys BigBiker de alto desempeño." },
+  { _id: "cat-chaquetas", title: "Chaquetas e Impermeables", slug: "chaquetas", description: "Reflectivas, cortavientos e impermeables." },
+  { _id: "cat-tubulares", title: "Tubulares y Balaclavas", slug: "tubulares", description: "Protección facial con estilo." },
+  { _id: "cat-accesorios", title: "Accesorios", slug: "accesorios", description: "Gorras, riñoneras, maletas y más." },
+];
+
+export const seedProducts: Product[] = [
+  { _id: "bb-1121", title: "Jersey Blanco Caballero", slug: "jersey-blanco-caballero", brand: "Big Biker", category: "jerseys", price: 178000, description: "Jersey BigBiker de tela técnica transpirable y secado rápido. Cómodo y resistente para cada rodada.", image: "/productos/Blanco2_frente_caballero_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], featured: true, rating: 4.4, stock: 8, lowStockThreshold: 5 },
+  { _id: "bb-1122", title: "Jersey Brújula Caballero", slug: "jersey-brujula-caballero", brand: "Big Biker", category: "jerseys", price: 178000, description: "Jersey BigBiker de tela técnica transpirable y secado rápido. Cómodo y resistente para cada rodada.", image: "/productos/Brujula_frente_caballero_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], featured: true, rating: 4.5, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1126", title: "Jersey Geométrico Caballero", slug: "jersey-geometrico-caballero", brand: "Big Biker", category: "jerseys", price: 178000, description: "Jersey BigBiker de tela técnica transpirable y secado rápido. Cómodo y resistente para cada rodada.", image: "/productos/Geometrico_frente_caballero_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.9, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-462", title: "Chaqueta 360° reflectiva gris doble faz", slug: "chaqueta-360-reflectiva-gris-doble-faz", brand: "Big Biker", category: "chaquetas", price: 340000, description: "Chaqueta reflectiva BigBiker de alta visibilidad. Costuras termo-selladas y protección contra el clima.", image: "/productos/IMG_2427_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], featured: true, rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-579", title: "Chaqueta 360° reflectiva microperforada", slug: "chaqueta-360-reflectiva-microperforada", brand: "Big Biker", category: "chaquetas", price: 280000, description: "Chaqueta reflectiva BigBiker de alta visibilidad. Costuras termo-selladas y protección contra el clima.", image: "/productos/_MG_2460_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], featured: true, rating: 4.8, stock: 1, lowStockThreshold: 5 },
+  { _id: "bb-1119", title: "Chaqueta 360° reflectiva microperforada negra", slug: "chaqueta-360-reflectiva-microperforada-negra", brand: "Big Biker", category: "chaquetas", price: 280000, description: "Chaqueta reflectiva BigBiker de alta visibilidad. Costuras termo-selladas y protección contra el clima.", image: "/productos/micro_negra_1_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.9, stock: 1, lowStockThreshold: 5 },
+  { _id: "bb-646", title: "Chaqueta reflectiva básica", slug: "chaqueta-reflectiva-basica", brand: "Big Biker", category: "chaquetas", price: 220000, description: "Chaqueta reflectiva BigBiker de alta visibilidad. Costuras termo-selladas y protección contra el clima.", image: "/productos/_MG_2406_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.5, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-604", title: "Chaqueta reflectiva negra doble faz", slug: "chaqueta-reflectiva-negra-doble-faz", brand: "Big Biker", category: "chaquetas", price: 340000, description: "Chaqueta reflectiva BigBiker de alta visibilidad. Costuras termo-selladas y protección contra el clima.", image: "/productos/Chaq_reflectiva_negra_frente_sin_flash_cierre_negro_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.5, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-974", title: "Cortavientos Premium Gris", slug: "cortavientos-premium-gris", brand: "Big Biker", category: "chaquetas", price: 145000, description: "Cortavientos BigBiker en tela impermeable con capucha. Liviano, plegable y con logo de la marca.", image: "/productos/Cortavientos_Gris_frente_con_capucha_2_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.4, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-463", title: "Cortavientos Premium Negra", slug: "cortavientos-premium-negra", brand: "Big Biker", category: "chaquetas", price: 145000, description: "Cortavientos BigBiker en tela impermeable con capucha. Liviano, plegable y con logo de la marca.", image: "/productos/Cortavientos_Negro_frente_con_capucha_2_250x285.jpg", variants: [
+    { label: "S", kind: "talla" },
+    { label: "M", kind: "talla" },
+    { label: "L", kind: "talla" },
+    { label: "XL", kind: "talla" }
+  ], rating: 4.4, stock: 22, lowStockThreshold: 5 },
+  { _id: "bb-1127", title: "Acuarela Violeta Dama", slug: "acuarela-violeta-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Acuarela_violeta_1_250x285.jpg", featured: true, rating: 4.3, stock: 3, lowStockThreshold: 5 },
+  { _id: "bb-1164", title: "Ardilla Dama", slug: "ardilla-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Ardilla_1_250x285.jpg", featured: true, rating: 4.5, stock: 1, lowStockThreshold: 5 },
+  { _id: "bb-1092", title: "Camo Acuarela", slug: "camo-acuarela", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Camo_acuarela_1_250x285.jpg", rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1085", title: "Círculos Azules Caballero", slug: "circulos-azules-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Circulos_azules_11_250x285.jpg", rating: 4.3, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1024", title: "Círculos Neón Dama", slug: "circulos-neon-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Circulos_neon_11_250x285.jpg", rating: 4.5, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-1086", title: "Cuadrícula Aguamarina Caballero", slug: "cuadricula-aguamarina-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Cuadricula_aguamarina_1_250x285.jpg", rating: 4.4, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1165", title: "Dino Dama", slug: "dino-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Dino_1_250x285.jpg", rating: 4.6, stock: 12, lowStockThreshold: 5 },
+  { _id: "bb-1056", title: "Figuras Azules Dama", slug: "figuras-azules-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Figuras_azules_19_250x285.jpg", rating: 4.9, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1087", title: "Figuras Neón Caballero", slug: "figuras-neon-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Figuras_neon_1_250x285.jpg", rating: 4.5, stock: 27, lowStockThreshold: 5 },
+  { _id: "bb-979", title: "Figuras Verdes", slug: "figuras-verdes", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Figuras_verdes_1_250x285.jpg", rating: 4.9, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-781", title: "Flores Fucsia Dama", slug: "flores-fucsia-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Flores_fucsia_17_250x285.jpg", rating: 4.7, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-1129", title: "Flores Lila Dama", slug: "flores-lila-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Flores_lila_1_250x285.jpg", rating: 4.5, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-1113", title: "Geométrico Gris Caballero", slug: "geometrico-gris-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Geometrico_gris_18_250x285.jpg", rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1089", title: "Geométrico Verde Caballero", slug: "geometrico-verde-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Geometrico_verde_1_250x285.jpg", rating: 4.7, stock: 1, lowStockThreshold: 5 },
+  { _id: "bb-688", title: "Gris Microperforado Caballero", slug: "gris-microperforado-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Gris_microperforado_Caballero_1_250x285.jpg", rating: 4.5, stock: 22, lowStockThreshold: 5 },
+  { _id: "bb-689", title: "Gris Microperforado Dama", slug: "gris-microperforado-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Gris_microperforado_Dama_1_250x285.jpg", rating: 4.6, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-981", title: "Hojas Naranja Dama", slug: "hojas-naranja-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Hojas_naranja_13_250x285.jpg", rating: 4.4, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-761", title: "Hojas Verdes Dama", slug: "hojas-verdes-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Hojas_verdes_18_250x285.jpg", rating: 4.8, stock: 8, lowStockThreshold: 5 },
+  { _id: "bb-1166", title: "Homero Dama", slug: "homero-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Homero_1_250x285.jpg", rating: 4.7, stock: 8, lowStockThreshold: 5 },
+  { _id: "bb-1167", title: "Labubu Fucsia Dama", slug: "labubu-fucsia-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Labubu_fucsia_1_250x285.jpg", rating: 4.8, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-452", title: "Leopardo Fucsia Dama", slug: "leopardo-fucsia-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Leopardo_fucsia_13_250x285.jpg", rating: 4.7, stock: 3, lowStockThreshold: 5 },
+  { _id: "bb-165", title: "Líneas Negras Grises Caballero", slug: "lineas-negras-grises-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Lineas_negras_grices_1_250x285.jpg", rating: 4.7, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1130", title: "Manchas Naranja Caballero", slug: "manchas-naranja-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Manchas_naranja_1_250x285.jpg", rating: 4.6, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1143", title: "Mármol Negro Caballero", slug: "marmol-negro-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Marmol_negro_1_250x285.jpg", rating: 4.5, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-166", title: "Negro Caballero", slug: "negro-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Color_negro_Caballero_1_250x285.jpg", rating: 4.8, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-573", title: "Negro Dama", slug: "negro-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Color_negro_Dama_1_250x285.jpg", rating: 4.9, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-468", title: "Negro Microperforado Caballero", slug: "negro-microperforado-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Negro_Microperforado_Caballero_13_250x285.jpg", rating: 4.9, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-667", title: "Negro Microperforado Dama", slug: "negro-microperforado-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Negro_Microperforado_Dama_1_250x285.jpg", rating: 4.5, stock: 27, lowStockThreshold: 5 },
+  { _id: "bb-1144", title: "Paint Dama", slug: "paint-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Paint_1_250x285.jpg", rating: 4.6, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-1131", title: "Panal Aguamarina Dama", slug: "panal-aguamarina-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Panal_aguamarina_1_250x285.jpg", rating: 4.7, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1132", title: "Panal Verde Caballero", slug: "panal-verde-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Panal_verde_13_250x285.jpg", rating: 4.8, stock: 27, lowStockThreshold: 5 },
+  { _id: "bb-1094", title: "Píxel Aguamarina", slug: "pixel-aguamarina", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Pixel_aguamarina_1_250x285.jpg", rating: 4.5, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-1115", title: "Plantas Azules Dama", slug: "plantas-azules-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Balazo_azul_1_250x285.jpg", rating: 4.5, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1168", title: "Pulpo Dama", slug: "pulpo-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Pulpo_1_250x285.jpg", rating: 4.9, stock: 22, lowStockThreshold: 5 },
+  { _id: "bb-525", title: "Puntillismo Dama", slug: "puntillismo-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Puntillismo_1_250x285.jpg", rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1145", title: "Rayas Grises Caballero", slug: "rayas-grises-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Rayas_grices_1_250x285.jpg", rating: 4.7, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1146", title: "Rayones Aguamarina Dama", slug: "rayones-aguamarina-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Rayones_aguamarina_1_250x285.jpg", rating: 4.8, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1169", title: "Stitch Dama", slug: "stitch-dama", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Stitch_1_250x285.jpg", rating: 4.3, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-635", title: "Triángulos Azules Caballero", slug: "triangulos-azules-caballero", brand: "Big Biker", category: "tubulares", price: 41000, description: "Tubular multifuncional BigBiker: protege del sol, viento y polvo. Tela elástica, suave y transpirable.", image: "/productos/Triangulos_azules_174_250x285.jpg", rating: 4.8, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1147", title: "Gorra Clásica Negra", slug: "gorra-clasica-negra", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Clasica_negra_1_250x285.jpg", featured: true, rating: 4.9, stock: 27, lowStockThreshold: 5 },
+  { _id: "bb-1148", title: "Gorra Deportiva Gris", slug: "gorra-deportiva-gris", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_deportiva_gris_1_250x285.jpg", featured: true, rating: 4.3, stock: 50, lowStockThreshold: 5 },
+  { _id: "bb-1149", title: "Gorra Liviana Arena", slug: "gorra-liviana-arena", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Liviana_arena_1_250x285.jpg", rating: 4.4, stock: 1, lowStockThreshold: 5 },
+  { _id: "bb-1006", title: "Gorra Premium Azul Navy SM", slug: "gorra-premium-azul-navy-sm", brand: "Big Biker", category: "accesorios", price: 122000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Azul_Navy_Premium_Talla_S-M_1_250x285.jpg", rating: 4.8, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-1002", title: "Gorra Premium Delta Azul Navy", slug: "gorra-premium-delta-azul-navy", brand: "Big Biker", category: "accesorios", price: 158000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Azul_Navy_Delta_Premium_1_250x285.jpg", rating: 4.4, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-297", title: "Gorra Premium Delta Gris", slug: "gorra-premium-delta-gris", brand: "Big Biker", category: "accesorios", price: 158000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Gris_Delta_Premium_1_250x285.jpg", rating: 4.6, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1001", title: "Gorra Premium Delta Gris Carbón", slug: "gorra-premium-delta-gris-carbon", brand: "Big Biker", category: "accesorios", price: 158000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Gris_Carbon_Delta_Premium_1_250x285.jpg", rating: 4.3, stock: 8, lowStockThreshold: 5 },
+  { _id: "bb-1011", title: "Gorra Premium Multicam Arena", slug: "gorra-premium-multicam-arena", brand: "Big Biker", category: "accesorios", price: 133000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Multicam_Arena_Premium_1_250x285.jpg", rating: 4.6, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1158", title: "Bolso Portacascos", slug: "bolso-portacascos", brand: "Big Biker", category: "accesorios", price: 63000, description: "Bolso resistente para transportar tu casco con seguridad.", image: "/productos/Portacascos_1_250x285.jpg", rating: 4.6, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1053", title: "Chaleco Reflectivo Faja", slug: "chaleco-reflectivo-faja", brand: "Big Biker", category: "accesorios", price: 41000, description: "Chaleco reflectivo ajustable. Mayor visibilidad y seguridad en la vía.", image: "/productos/Chaleco_tipo_faja_1_250x285.jpg", rating: 4.6, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1032", title: "Cubre-maletas Negro", slug: "cubre-maletas-negro", brand: "Big Biker", category: "accesorios", price: 44000, description: "Cubierta 100% impermeable que protege tu carga y aumenta tu visibilidad.", image: "/productos/Cubremorral_negro_frente_250x285.jpg", rating: 4.6, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-623", title: "Cubre-maletas Reflectivo", slug: "cubre-maletas-reflectivo", brand: "Big Biker", category: "accesorios", price: 59000, description: "Cubierta 100% impermeable que protege tu carga y aumenta tu visibilidad.", image: "/productos/Cubremorral_frente_250x285.jpg", rating: 4.3, stock: 50, lowStockThreshold: 5 },
+  { _id: "bb-910", title: "Drybag 35 lts", slug: "drybag-35-lts", brand: "Big Biker", category: "accesorios", price: 270000, description: "Equipo tipo drybag 100% impermeable, ideal para ciudad y viaje. Altamente resistente.", image: "/productos/_MG_2373_250x285.jpg", rating: 4.3, stock: 12, lowStockThreshold: 5 },
+  { _id: "bb-1054", title: "Drybag Morral", slug: "drybag-morral", brand: "Big Biker", category: "accesorios", price: 291000, description: "Equipo tipo drybag 100% impermeable, ideal para ciudad y viaje. Altamente resistente.", image: "/productos/Morral_drybag_25_lt_1_250x285.jpg", rating: 4.7, stock: 18, lowStockThreshold: 5 },
+  { _id: "bb-1154", title: "Herramientero", slug: "herramientero", brand: "Big Biker", category: "accesorios", price: 110000, description: "Bolso organizador para cargar la herramienta en la moto.", image: "/productos/Herramientero_1_250x285.jpg", rating: 4.9, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-1035", title: "Porta Celular y Documentos", slug: "porta-celular-y-documentos", brand: "Big Biker", category: "accesorios", price: 69000, description: "Bolso para llevar documentos y celular de forma segura y a la mano.", image: "/productos/Portacelular_y_documentos_1_250x285.jpg", rating: 4.9, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-908", title: "Arnés de seguridad para niños", slug: "arnes-de-seguridad-para-ninos", brand: "Big Biker", category: "accesorios", price: 145000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Arnes_posterior_frontal_con_modelo_3_250x285.jpg", rating: 4.8, stock: 50, lowStockThreshold: 5 },
+  { _id: "bb-207", title: "Bandana", slug: "bandana", brand: "Big Biker", category: "accesorios", price: 41000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Bandana_17_250x285.jpg", rating: 4.7, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-567", title: "Gorro Negro", slug: "gorro-negro", brand: "Big Biker", category: "accesorios", price: 24000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Gorro_papa_1_250x285.jpg", rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-300", title: "Manga Azul", slug: "manga-azul", brand: "Big Biker", category: "accesorios", price: 24000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Manga_azul_250x285.jpg", rating: 4.9, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-301", title: "Manga Gris", slug: "manga-gris", brand: "Big Biker", category: "accesorios", price: 24000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Manga_Gris_250x285.jpg", rating: 4.3, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-209", title: "Manga Negra", slug: "manga-negra", brand: "Big Biker", category: "accesorios", price: 24000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Manga_Negra_250x285.jpg", rating: 4.9, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-1033", title: "Manga Negra Microperforada", slug: "manga-negra-microperforada", brand: "Big Biker", category: "accesorios", price: 24000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Manga_negra_microperforada_1_250x285.jpg", rating: 4.7, stock: 22, lowStockThreshold: 5 },
+  { _id: "bb-1049", title: "Parasol", slug: "parasol", brand: "Big Biker", category: "accesorios", price: 66000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/parasol1_250x285.jpg", rating: 4.9, stock: 6, lowStockThreshold: 5 },
+  { _id: "bb-1116", title: "Protector de Calzado", slug: "protector-de-calzado", brand: "Big Biker", category: "accesorios", price: 37000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/protector_calzado_1_250x285.jpg", rating: 4.6, stock: 4, lowStockThreshold: 5 },
+  { _id: "bb-1137", title: "Protector de Calzado Clásico", slug: "protector-de-calzado-clasico", brand: "Big Biker", category: "accesorios", price: 37000, description: "Accesorio BigBiker de alta calidad para complementar tu equipo motero.", image: "/productos/Protector_calzado_clasico_vista_izq_250x285.jpg", rating: 4.6, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1157", title: "Riñonera Básica", slug: "rinonera-basica", brand: "Big Biker", category: "accesorios", price: 63000, description: "Riñonera BigBiker práctica y resistente para tus salidas.", image: "/productos/Rinonera_basica_1_250x285.jpg", rating: 4.5, stock: 3, lowStockThreshold: 5 },
+  { _id: "bb-1155", title: "Riñonera Doble 3 Lt", slug: "rinonera-doble-3-lt", brand: "Big Biker", category: "accesorios", price: 299000, description: "Riñonera BigBiker práctica y resistente para tus salidas.", image: "/productos/Rinonera_doble_3_Lt_1_250x285.jpg", rating: 4.3, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1156", title: "Riñonera Multiuso 1 Lt", slug: "rinonera-multiuso-1-lt", brand: "Big Biker", category: "accesorios", price: 167000, description: "Riñonera BigBiker práctica y resistente para tus salidas.", image: "/productos/Rinonera_multiuso_manubrio_1_250x285.jpg", rating: 4.4, stock: 2, lowStockThreshold: 5 },
+  { _id: "bb-1010", title: "Gorra Premium Negra SM", slug: "gorra-premium-negra-sm", brand: "Big Biker", category: "accesorios", price: 122000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Negra_Premium_Talla_S-M_1_250x285.jpg", rating: 4.5, stock: 35, lowStockThreshold: 5 },
+  { _id: "bb-1012", title: "Gorra Premium Plana Gris", slug: "gorra-premium-plana-gris", brand: "Big Biker", category: "accesorios", price: 110000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Plana_Gris_Premium_1_250x285.jpg", rating: 4.7, stock: 27, lowStockThreshold: 5 },
+  { _id: "bb-1013", title: "Gorra Premium Plana Negra Camo", slug: "gorra-premium-plana-negra-camo", brand: "Big Biker", category: "accesorios", price: 110000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Plana_Negra_y_Camo_Premium_1_250x285.jpg", rating: 4.8, stock: 50, lowStockThreshold: 5 },
+  { _id: "bb-1150", title: "Gorra Trucker Camo Arena", slug: "gorra-trucker-camo-arena", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Trucker_Camo_arena_1_250x285.jpg", rating: 4.5, stock: 12, lowStockThreshold: 5 },
+  { _id: "bb-1151", title: "Gorra Trucker Camo Azul", slug: "gorra-trucker-camo-azul", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Trucker_Camo_azul_1_250x285.jpg", rating: 4.6, stock: 8, lowStockThreshold: 5 },
+  { _id: "bb-1152", title: "Gorra Trucker Camo Gris", slug: "gorra-trucker-camo-gris", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Trucker_Camo_gris_1_250x285.jpg", rating: 4.7, stock: 0, lowStockThreshold: 5 },
+  { _id: "bb-1153", title: "Gorra Trucker Camo Verde", slug: "gorra-trucker-camo-verde", brand: "Big Biker", category: "accesorios", price: 85000, description: "Gorra BigBiker con logo bordado. Ajuste cómodo y acabado de calidad.", image: "/productos/Gorra_Trucker_Camo_verde_1_250x285.jpg", rating: 4.8, stock: 22, lowStockThreshold: 5 },
+];
+
+export const seedCoupons: Coupon[] = [
+  { _id: "c-1", code: "BIGBIKER10", percentage: 10, active: true, label: "10% en tu primera compra" },
+  { _id: "c-2", code: "MOTERO15", percentage: 15, active: true, label: "15% en indumentaria seleccionada" },
+  { _id: "c-3", code: "EXPIRADO20", percentage: 20, active: false, label: "Promo vencida" },
+];
+
+export const seedPromos: Promo[] = [
+  {
+    _id: "promo-1",
+    title: "TEMPORADA DE RODADA",
+    subtitle: "Aprovecha tus cupones BigBiker en jerseys, chaquetas y accesorios.",
+    ctaLabel: "Ver promociones",
+    ctaHref: "/promociones",
+    active: true,
+  },
+];
