@@ -6,19 +6,22 @@ import { apiVersion, dataset, isSanityConfigured, projectId } from "./env";
 // documentos requieren autenticación para leerse, así que la tienda necesita
 // este token para mostrar el contenido del CMS. Sin token, el data layer cae
 // a los datos semilla (lib/data.ts).
-const readToken = process.env.SANITY_API_READ_TOKEN;
+// Se sanea por si llega con comillas/espacios (al pegar en Vercel, etc.).
+const readToken = (process.env.SANITY_API_READ_TOKEN ?? "")
+  .trim()
+  .replace(/^['"]|['"]$/g, "")
+  .trim();
 
 // El cliente solo se crea si hay projectId.
+// `useCdn: true` usa la CDN de Sanity (apicdn): escala para builds con muchas
+// páginas estáticas (evita rate-limits) y respeta el token. ISR mantiene fresco.
 export const sanityClient: SanityClient | null = isSanityConfigured
   ? createClient({
       projectId,
       dataset,
       apiVersion,
-      // Con token leemos contenido autenticado y fresco (ISR cachea 60s);
-      // solo documentos publicados (sin borradores).
-      ...(readToken
-        ? { token: readToken, useCdn: false, perspective: "published" }
-        : { useCdn: true }),
+      useCdn: true,
+      ...(readToken ? { token: readToken, perspective: "published" } : {}),
     })
   : null;
 
